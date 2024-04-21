@@ -1,0 +1,73 @@
+<h1 class="text-center">Reactive Form</h1>
+<form [formGroup]="vinuform" (ngSubmit)="submit()">
+
+    <div class="form-group">
+        <label for="">Title :</label>
+        <input type="text" class="form-control" name="title" required
+            [ngClass]="{'is-invalid':f.title.errors && isFormSubmit} " formControlName="title">
+        <div *ngIf="f.title.errors && isFormSubmit" class="invalid-feedback">
+            please enter the title
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="">Price :</label>
+        <input type="number" name="price" class="form-control" required
+            [ngClass]="{'is-invalid':f.price.errors && isFormSubmit} " formControlName="price">
+        <div *ngIf="f.price.errors?.['required'] && isFormSubmit" class="invalid-feedback">
+            please enter the price
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="">Description :</label>
+        <input type="text" name="description" class="form-control" required
+            [ngClass]="{'is-invalid':f.description.errors && isFormSubmit} " formControlName="description">
+        <div *ngIf="f.description.errors && isFormSubmit" class="invalid-feedback">
+            please enter the description
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="">Image :</label>
+        <input type="text" name="image" class="form-control" required
+            [ngClass]="{'is-invalid':f.image.errors && isFormSubmit} " formControlName="image">
+        <div *ngIf="f.image.errors && isFormSubmit" class="invalid-feedback">
+            please enter the image url
+        </div>
+    </div>
+
+    <div class="text-center my-3">
+        <button  class="btn btn-primary">Submit</button>&nbsp;
+        <button  class="btn btn-primary" (click)="updatedata()">Update Data</button>
+    </div>
+</form>
+
+
+<div class="text-center container">
+    <h3>Reactive form List</h3>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let abc of tabledata">
+            <td>{{abc.title}}</td>
+            <td>{{abc.price}}</td>
+            <td>{{abc.description}}</td>
+            <td><img [src]="abc.image" width="100px"  alt=""></td>
+            <td>
+                <button class="btn btn-primary" (click)="delete(abc)">Delete</button>&nbsp;
+                <button class="btn btn-primary" (click)="selectdata(abc)">Select Data</button>
+            </td>
+        </tr>
+    </table>
+
+</div>

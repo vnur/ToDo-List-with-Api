@@ -1,0 +1,48 @@
+
+
+<div class="jitu">
+
+    <div class="container">
+
+        <h1 class="text-center" style="color: rgb(125, 231, 44);">Template driven Form</h1>
+    
+    
+        <form #form="ngForm" (submit)="submit(form)">
+    
+            <div class="form-group">
+                <label for="firstname">Firstname</label>
+                <input type="text" id="firstname" class="form-control" required name="firstname" #firstname="ngModel"
+                    ngModel [ngClass]="{'is-invalid':firstname.invalid && form.submitted}">
+                <div *ngIf="firstname.invalid && form.submitted" class="invalid-feedback">
+                    Please Enter the Valid Firstname
+                </div>
+            </div>
+    
+    
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" required name="email" #email="ngModel" ngModel
+                    [ngClass]="{'is-invalid':email.invalid && form.submitted}">
+                <div *ngIf="email.touched">
+                    <div *ngIf="email.errors?.['required']">
+                        Please enter the email
+                    </div>
+                    <div *ngIf="email.errors?.['pattern']">
+                        please Enter the valid Email
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="password" id="password" class="form-control" required name="password" #password="ngModel"
+                    ngModel  [ngClass]="{'is-invalid':password.invalid && form.submitted}">
+            </div>
+    
+            <div class="text-center  my-4" >
+               <button class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

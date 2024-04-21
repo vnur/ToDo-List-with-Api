@@ -1,0 +1,16 @@
+{
+  "TemplateDrivenData": [
+    {
+      "id": "dbe8",
+      "firstname": "jeet",
+      "email": "jeetkolear1997@gsmail.com",
+      "password": "Pass@123"
+    },
+    {
+      "id": "b060",
+      "firstname": "vinayak",
+      "email": "vinayak@gmail.com",
+      "password": "Pass@123"
+    }
+  ]
+}

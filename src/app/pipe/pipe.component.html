@@ -1,0 +1,35 @@
+
+<div>
+<p>{{stringdata}}</p>
+<p>{{stringdata |uppercase}}</p>
+<p>{{stringdata |lowercase}}</p>
+<p>{{stringdata |titlecase}}</p>
+</div>
+
+<div>
+    <p>{{numdata}}</p>
+    <p>{{numdata | date}}</p>
+    <p>{{numdata  | date: 'short'}} </p>
+    <p>{{numdata | date: 'medium'}}</p>
+    <p>{{numdata | date : 'dd/MM/YY'}}</p>
+    <p>{{numdata |date: 'dd/MMM/YYY'}}</p>
+    <p>{{numdata | date: 'EEEE/MMM/YYY'}}</p>
+</div>
+
+<div>
+    <p>{{numdata1 | currency: 'INR'}}</p>
+    <p>{{numdata1 | currency: 'USD'}}</p>
+    <p>{{numdata1 | currency: 'EUR'}}</p>
+</div>
+
+<div>
+    <p>{{stringdata | slice: 2:6 | uppercase}}</p>
+</div>
+
+<div>
+    <p>{{jsondata | json}}</p>
+</div>
+
+<div>
+    <p >{{stringdata | custom:age}}</p>
+</div>
